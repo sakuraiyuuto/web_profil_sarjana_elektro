@@ -173,9 +173,8 @@
                             <label for="kelompok">Kelompok</label>
                             <select name="kelompok" class="form-control" required>
                                 <option disable value>. . .</option>
-                                <option value="Paket">Paket</option>
                                 <option value="Wajib">Wajib</option>
-                                <option value="Peminatan">Peminatan</option>
+                                <option value="Pilihan">Pilihan</option>
                             </select>
                         </div>
 
@@ -230,9 +229,8 @@
                                 <label for="kelompok">Kelompok</label>
                                 <select name="kelompok" id="kelompok" class="form-control" required>
                                     <option disable value>. . .</option>
-                                    <option value="Paket">Paket</option>
                                     <option value="Wajib">Wajib</option>
-                                    <option value="Peminatan">Peminatan</option>
+                                    <option value="Pilihan">Pilihan</option>
                                 </select>
                             </div>
                             <div class="modal-footer">

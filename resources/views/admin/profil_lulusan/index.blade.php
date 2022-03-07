@@ -140,7 +140,7 @@
                         </div>
                         <div class="form-group mt-2">
                             <label for="nim">NIM</label>
-                            <input type="text" class="form-control mt-0" name="nim" required maxlength="25"
+                            <input type="text" class="form-control mt-0" name="nim" required maxlength="15"
                                 placeholder=". . .">
                         </div>
                         <div class="form-group mt-2">
@@ -185,7 +185,7 @@
                             </div>
                             <div class="form-group mt-2">
                                 <label for="nim">NIM</label>
-                                <input type="text" class="form-control mt-0" name="nim" id="nim" required maxlength="25"
+                                <input type="text" class="form-control mt-0" name="nim" id="nim" required maxlength="15"
                                     placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">

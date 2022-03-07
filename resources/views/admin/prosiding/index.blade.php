@@ -71,8 +71,14 @@
                                                     <td>{{ $prosiding->tahun }}</td>
                                                     <td>{{ $prosiding->nomor_volume }}</td>
                                                     <td><a href="{{ $prosiding->url }}">{{ $prosiding->url }}</a></td>
-                                                    <td><a href="{{ url($prosiding->nama_file) }}" download
-                                                            target="_blank">{{ $prosiding->nama_file }}</a></td>
+                                                    <td>
+                                                        @if ($prosiding->nama_file != '')
+                                                            <a href="{{ url($prosiding->nama_file) }}" download
+                                                                target="_blank">{{ $prosiding->nama_file }}</a>
+                                                        @else
+                                                            -
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $prosiding->release_date }}</td>
                                                     @if ($prosiding->deleted_at == '')
                                                         @if ($prosiding->release_date <= date('Y-m-d'))
@@ -80,7 +86,7 @@
                                                         @else
                                                             <td>Belum Rilis</td>
                                                         @endif
-                                                    @else ($prosiding->deleted_at != "")
+                                                    @else
                                                         <td>Terhapus</td>
                                                     @endif
                                                     @if ($prosiding->deleted_at == '')
@@ -96,8 +102,7 @@
                                                                 data-release_date="{{ $prosiding->release_date }}"
                                                                 class="btn btn-warning open-formModalEdit"><i
                                                                     class="fa fa-edit"></i> Edit</button>
-                                                            <form
-                                                                action="{{ route('prosiding.destroy', $prosiding) }}"
+                                                            <form action="{{ route('prosiding.destroy', $prosiding) }}"
                                                                 method="post">
                                                                 @method('delete')
                                                                 @csrf
@@ -150,39 +155,35 @@
                     <h5 class="modal-title" id="formModalLabel">Tambah Data Prosiding</h5>
                     <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">X</button>
                 </div>
-                <form id="formAdd" action="{{ url('/admin/prosiding') }}" method="post"
-                    enctype="multipart/form-data">
+                <form id="formAdd" action="{{ url('/admin/prosiding') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group mt-2">
-                                <label for="judul">Judul</label>
-                                <input type="text" class="form-control mt-0" name="judul" required
-                                     placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="author">Author</label>
-                                <input type="text" class="form-control mt-0" name="author" required 
-                                    placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="tahun">Tahun</label>
-                                <input type="number" class="form-control mt-0" name="tahun" required maxlength="4"
-                                    placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="nomor_volume">Nomor/Volume</label>
-                                <input type="text" class="form-control mt-0" name="nomor_volume" required 
-                                    placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="url">Link File Prosiding</label>
-                                <input type="text" class="form-control mt-0" name="url" required 
-                                    placeholder=". . .">
-                            </div>
+                            <label for="judul">Judul</label>
+                            <input type="text" class="form-control mt-0" name="judul" maxlength="255" required
+                                placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="author">Author</label>
+                            <input type="text" class="form-control mt-0" name="author" required placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="tahun">Tahun</label>
+                            <input type="number" class="form-control mt-0" name="tahun" required maxlength="4"
+                                placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="nomor_volume">Nomor/Volume</label>
+                            <input type="text" class="form-control mt-0" name="nomor_volume" required placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="url">Link File Prosiding</label>
+                            <input type="text" class="form-control mt-0" name="url" required placeholder=". . .">
+                        </div>
                         <div class="form-group">
                             <label for="nama_file">File Prosiding</label>
-                            <input type="file" class="form-control mt-0" name="nama_file"
-                                onchange="Filevalidation()">
+                            <input type="file" class="form-control mt-0" name="nama_file" id="add_input_file"
+                                accept="application/pdf">
                         </div>
                         <div class="form-group mt-2">
                             <label for="release_date">Jadwal Rilis</label>
@@ -217,33 +218,33 @@
                             <input type="hidden" name="id" id="id">
                             <div class="form-group mt-2">
                                 <label for="judul">Judul</label>
-                                <input type="text" class="form-control mt-0" name="judul" id="judul" required
-                                     placeholder=". . .">
+                                <input type="text" class="form-control mt-0" name="judul" id="judul" maxlength="255"
+                                    required placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="author">Author</label>
-                                <input type="text" class="form-control mt-0" name="author" id="author" required 
+                                <input type="text" class="form-control mt-0" name="author" id="author" required
                                     placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="tahun">Tahun</label>
-                                <input type="number" class="form-control mt-0" name="tahun" id="tahun" required maxlength="4"
-                                    placeholder=". . .">
+                                <input type="number" class="form-control mt-0" name="tahun" id="tahun" required
+                                    maxlength="4" placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="nomor_volume">Nomor/Volume</label>
-                                <input type="text" class="form-control mt-0" name="nomor_volume" id="nomor_volume" required 
+                                <input type="text" class="form-control mt-0" name="nomor_volume" id="nomor_volume" required
                                     placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="url">Link File Prosiding</label>
-                                <input type="text" class="form-control mt-0" name="url" id="url" required 
+                                <input type="text" class="form-control mt-0" name="url" id="url" required
                                     placeholder=". . .">
                             </div>
                             <div class="form-group">
                                 <label for="nama_file">File Prosiding</label>
-                                <input type="file" class="form-control mt-0" name="nama_file" id="nama_file"
-                                    onchange="Filevalidation()">
+                                <input type="file" class="form-control mt-0" name="nama_file" id="edit_input_file"
+                                    accept="application/pdf">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="release_date">Jadwal Rilis</label>
@@ -321,5 +322,23 @@
                 $('.from-prevent-multiple-submits').attr('disabled', 'true');
             })
         })();
+
+        //Form add image validation
+        var uploadField = document.getElementById("add_input_file");
+        uploadField.onchange = function() {
+            if (this.files[0].size > 2000000) {
+                alert("Batas maksimum 2MB!");
+                this.value = "";
+            }
+        };
+
+        //Form edit image validation
+        var uploadField = document.getElementById("edit_input_file");
+        uploadField.onchange = function() {
+            if (this.files[0].size > 2000000) {
+                alert("Batas maksimum 2MB!");
+                this.value = "";
+            }
+        };
     </script>
 @endsection

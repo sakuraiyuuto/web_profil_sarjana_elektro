@@ -56,8 +56,14 @@
                                             <td>{{ $prosiding->author }}</td>
                                             <td>{{ $prosiding->tahun }}</td>
                                             <td>{{ $prosiding->nomor_volume }}</td>
-                                            <td><a class="btn btn-primary" href="{{ url($prosiding->nama_file) }}" download
-                                                            target="_blank">Download</a></td>
+                                            <td>
+                                                @if ($prosiding->nama_file != '')
+                                                    <a class="btn btn-primary" href="{{ url($prosiding->nama_file) }}"
+                                                        download target="_blank">Download</a>
+                                                @else
+                                                    -
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -102,8 +108,9 @@
                                                         href="{{ url($informasiTerbaru->slug) }}">{{ $informasiTerbaru->judul }}</a>
                                                 </h6>
                                                 <span>
-                                             <i class="fa fa-clock-o"></i>{{ date('d M, Y', strtotime($informasiTerbaru->release_date)) }}
-                                   
+                                                    <i
+                                                        class="fa fa-clock-o"></i>{{ date('d M, Y', strtotime($informasiTerbaru->release_date)) }}
+
                                                 </span>
                                             </div>
                                         </li>
@@ -135,8 +142,8 @@
                                                         <h6><a
                                                                 href="{{ $aplikasiIntegrasi->url }}">{{ $aplikasiIntegrasi->nama }}</a>
                                                         </h6>
-                                                        <span>   <i class="fa fa-clock-o"></i>
-                                                        {{ date('d M, Y', strtotime($aplikasiIntegrasi->release_date)) }}</span>
+                                                        <span> <i class="fa fa-clock-o"></i>
+                                                            {{ date('d M, Y', strtotime($aplikasiIntegrasi->release_date)) }}</span>
                                                     </div>
                                                 </li>
                                                 <!--LIST ITEM START-->

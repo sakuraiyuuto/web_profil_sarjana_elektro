@@ -72,7 +72,7 @@
                                                         @else
                                                             <td>Belum Rilis</td>
                                                         @endif
-                                                    @else ($dokumenProdi->deleted_at != "")
+                                                    @else
                                                         <td>Terhapus</td>
                                                     @endif
                                                     @if ($dokumenProdi->deleted_at == '')
@@ -149,8 +149,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama_file">File Dokumen Prodi</label>
-                            <input type="file" class="form-control mt-0" name="nama_file" required
-                                onchange="Filevalidation()">
+                            <input type="file" class="form-control mt-0" name="nama_file" required id="add_input_file">
                         </div>
                         <div class="form-group mt-2">
                             <label for="release_date">Jadwal Rilis</label>
@@ -190,8 +189,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="nama_file">File Dokumen Prodi</label>
-                                <input type="file" class="form-control mt-0" name="nama_file" id="nama_file"
-                                    onchange="Filevalidation()">
+                                <input type="file" class="form-control mt-0" name="nama_file" id="edit_input_file">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="release_date">Jadwal Rilis</label>
@@ -255,5 +253,23 @@
                 return false;
             });
         });
+
+        //Form add image validation
+        var uploadField = document.getElementById("add_input_file");
+        uploadField.onchange = function() {
+            if (this.files[0].size > 2000000) {
+                alert("Batas maksimum 2MB!");
+                this.value = "";
+            }
+        };
+
+        //Form edit image validation
+        var uploadField = document.getElementById("edit_input_file");
+        uploadField.onchange = function() {
+            if (this.files[0].size > 2000000) {
+                alert("Batas maksimum 2MB!");
+                this.value = "";
+            }
+        };
     </script>
 @endsection

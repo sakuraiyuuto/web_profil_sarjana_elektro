@@ -20,7 +20,7 @@ class CreateDosensTable extends Migration
             $table->string('nama', 255)->nullable(false);
             $table->string('nip', 25)->nullable(false);
             $table->string('pangkat_golongan', 100)->nullable(false);
-            $table->string('url', 100)->nullable(true);
+            $table->text('url')->nullable(true);
             $table->unsignedBigInteger('kelompok_keahlian_dosen_id')->nullable(false);
             $table->foreign('kelompok_keahlian_dosen_id')->references('id')->on('kelompok_keahlian_dosens')->onDelete('cascade');
             $table->softDeletes();

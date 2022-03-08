@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'Tata Tertib Peraturan - Teknik Elektro UNTAN')
+@section('title', 'Tata Tertib Peraturan - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->

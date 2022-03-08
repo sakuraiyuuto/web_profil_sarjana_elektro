@@ -261,8 +261,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="nama_file">File Jadwal Ujian</label>
-                                <input type="file" class="form-control mt-0" name="nama_file" id="nama_file"
-                                    id="edit_input_file" accept="application/pdf">
+                                <input type="file" class="form-control mt-0" name="nama_file" id="edit_input_file"
+                                    accept="application/pdf">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="release_date">Jadwal Rilis</label>

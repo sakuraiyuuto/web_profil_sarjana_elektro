@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'Ruang Perkuliahan - Teknik Elektro UNTAN')
+@section('title', 'Ruang Perkuliahan - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->

@@ -183,7 +183,8 @@
                         </div>
                         <div class="form-group">
                             <label for="nama_file">File Jurnal</label>
-                            <input type="file" class="form-control mt-0" name="nama_file" id="add_input_file">
+                            <input type="file" class="form-control mt-0" name="nama_file" id="add_input_file"
+                                accept="application/pdf">
                         </div>
                         <div class="form-group mt-2">
                             <label for="release_date">Jadwal Rilis</label>

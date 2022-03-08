@@ -39,8 +39,8 @@
                                             <div class="form-group">
                                                 <label for="judul">Judul</label>
                                                 <input type="text" class="form-control" id="judul" name="judul"
-                                                    placeholder="Masukkan Judul" value="{{ $penelitian->judul }}"
-                                                    required>
+                                                    maxlength="255" placeholder="Masukkan Judul"
+                                                    value="{{ $penelitian->judul }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="author">Peneliti</label>
@@ -50,9 +50,9 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="tahun">Tahun</label>
-                                                <input type="text" class="form-control" id="tahun" name="tahun"
-                                                    placeholder="Masukkan Tahun Penelitian" value="{{ $penelitian->tahun }}"
-                                                    required>
+                                                <input type="number" class="form-control" id="tahun" name="tahun"
+                                                    placeholder="Masukkan Tahun Penelitian"
+                                                    value="{{ $penelitian->tahun }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="thumbnail">Thumbnail (Maksimal 2MB)</label>

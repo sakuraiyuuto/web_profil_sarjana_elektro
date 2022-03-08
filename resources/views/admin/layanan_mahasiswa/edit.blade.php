@@ -39,8 +39,8 @@
                                             <div class="form-group">
                                                 <label for="judul">Judul</label>
                                                 <input type="text" class="form-control" id="judul" name="judul"
-                                                    placeholder="Masukkan Judul" value="{{ $layananMahasiswa->judul }}"
-                                                    required>
+                                                    maxlength="255" placeholder="Masukkan Judul"
+                                                    value="{{ $layananMahasiswa->judul }}" required>
                                             </div>
 
                                             <div class="form-group">

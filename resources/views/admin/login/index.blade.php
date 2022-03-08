@@ -24,7 +24,7 @@
             <div class="card-header text-center">
                 <img src="{{ url('/images/logo.png') }}" alt="Logo" class="brand-image"
                     style="width :10rem;opacity: .8">
-                <p class="h1"><b>Magister Teknik </b>Kelautan</p>
+                <p class="h1"><b>Sarjana Teknik </b>Elektro</p>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Halaman Admin Web Teknik Elektro</p>

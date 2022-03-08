@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'HAKI - Teknik Elektro UNTAN')
+@section('title', 'HAKI - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->

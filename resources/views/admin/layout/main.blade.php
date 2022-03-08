@@ -463,9 +463,9 @@
                         </li>
 
                         <li
-                            class="nav-item {{ set_open(['jadwal_kuliah.index', 'jadwal_ujian.index', 'jadwal_kegiatan.index', 'jadwal_kegiatan.create', 'jadwal_kegiatan.edit']) }}">
+                            class="nav-item {{ set_open(['jadwal_kuliah.index','jadwal_ujian.index','jadwal_kegiatan.index','jadwal_kegiatan.create','jadwal_kegiatan.edit']) }}">
                             <a href="#"
-                                class="nav-link {{ set_active(['jadwal_kuliah.index', 'jadwal_ujian.index', 'jadwal_kegiatan.index', 'jadwal_kegiatan.create', 'jadwal_kegiatan.edit']) }}">
+                                class="nav-link {{ set_active(['jadwal_kuliah.index','jadwal_ujian.index','jadwal_kegiatan.index','jadwal_kegiatan.create','jadwal_kegiatan.edit']) }}">
                                 <i class="nav-icon fas fa-calendar"></i>
                                 <p>
                                     Agenda
@@ -563,9 +563,9 @@
                         </li>
 
                         <li
-                            class="nav-item {{ set_open(['ruang_perkuliahan.index','laboratorium.index','ruang_staf_dan_dosen.index','perpustakaan.index']) }}">
+                            class="nav-item {{ set_open(['ruang_perkuliahan.index','laboratorium.index','laboratorium.create','laboratorium.edit','ruang_staf_dan_dosen.index','perpustakaan.index']) }}">
                             <a href="#"
-                                class="nav-link {{ set_active(['ruang_perkuliahan.index','laboratorium.index','ruang_staf_dan_dosen.index','perpustakaan.index']) }}">
+                                class="nav-link {{ set_active(['ruang_perkuliahan.index','laboratorium.index','laboratorium.create','laboratorium.edit','ruang_staf_dan_dosen.index','perpustakaan.index']) }}">
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     Fasilitas
@@ -585,8 +585,9 @@
 
                                 <li class="nav-item">
                                     <a href="{{ url('admin/laboratorium') }}"
-                                        class="nav-link {{ set_active(['laboratorium.index']) }}">
-                                        <i class="far fa{{ set_dot(['laboratorium.index']) }}-circle nav-icon"></i>
+                                        class="nav-link {{ set_active(['laboratorium.index', 'laboratorium.create', 'laboratorium.edit']) }}">
+                                        <i
+                                            class="far fa{{ set_dot(['laboratorium.index', 'laboratorium.create', 'laboratorium.edit']) }}-circle nav-icon"></i>
                                         <p>Laboratorium</p>
                                     </a>
                                 </li>
@@ -619,42 +620,14 @@
                                 <p>Dokumen Prodi</p>
                             </a>
                         </li>
-                        <li
-                            class="nav-item  {{ request()->is('admin/berita/' . $berita->id . '/edit') ? 'menu-open' : '' }} {{ set_open(['berita.index', 'berita.create', 'blog.index', 'blog.create', 'blog.edit']) }}">
-                            <a href="#"
-                                class="nav-link {{ request()->is('admin/berita/' . $berita->id . '/edit') ? 'active' : '' }} {{ set_active(['berita.index', 'berita.create', 'blog.index', 'blog.create', 'blog.edit']) }}">
+                        <li class="nav-item {{ set_open(['berita.index', 'berita.create', 'berita.edit']) }}">
 
+                            <a href="{{ url('admin/berita') }}"
+                                class="nav-link {{ set_active(['berita.index', 'berita.create', 'berita.edit']) }}">
                                 <i class="nav-icon fas fa-newspaper"></i>
-                                <p>
-                                    Berita & Blog Dosen
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                                <p>Berita</p>
                             </a>
-                            <ul class="nav nav-treeview  space-maju">
-
-                                <li class="nav-item">
-                                    <a href="{{ url('admin/berita') }}"
-                                        class="nav-link {{ request()->is('admin/berita/' . $berita->id . '/edit') ? 'active' : '' }} {{ set_active(['berita.index', 'berita.create']) }}">
-                                        <i
-                                            class="far fa{{ set_dot(['berita.index', 'berita.create', 'berita.edit']) }}{{ request()->is('admin/berita/' . $berita->id . '/edit') ? '-dot' : '' }}-circle nav-icon"></i>
-
-                                        <p>Berita</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{ url('admin/blog') }}"
-                                        class="nav-link {{ set_active(['blog.index', 'blog.create', 'blog.edit']) }}">
-                                        <i
-                                            class="far fa{{ set_dot(['blog.index', 'blog.create', 'blog.edit']) }}-circle nav-icon"></i>
-
-                                        <p>Blog Dosen</p>
-                                    </a>
-                                </li>
-
-                            </ul>
                         </li>
-
                         <li
                             class="nav-item {{ set_open(['repository_kerja_praktik.index','repository_kerja_praktik.edit','repository_kerja_praktik.create','repository_skripsi.index','repository_skripsi.edit','repository_skripsi.create']) }}">
                             <a href="#"

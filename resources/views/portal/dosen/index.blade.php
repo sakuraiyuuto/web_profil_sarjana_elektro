@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'Dosen - Teknik Elektro UNTAN')
+@section('title', 'Dosen - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->
@@ -50,11 +50,11 @@
                                 <tbody>
                                     @foreach ($dosens as $dosen)
                                         <tr>
-                                            <th>{{ $loop->iteration }}</th>
-                                            <th>{{ $dosen->nama }}</th>
-                                            <th>{{ $dosen->nip }}</th>
-                                            <th>{{ $dosen->pangkat_golongan }}</th>
-                                            <th>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $dosen->nama }}</td>
+                                            <td>{{ $dosen->nip }}</td>
+                                            <td>{{ $dosen->pangkat_golongan }}</td>
+                                            <td>
                                                 @if ($dosen->url != '')
                                                     <a href="{{ $dosen->url }}">
                                                         <div class="btn btn-primary">
@@ -64,7 +64,7 @@
                                                 @else
                                                     -
                                                 @endif
-                                            </th>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

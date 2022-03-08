@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'Visi & Misi - Teknik Elektro UNTAN')
+@section('title', 'Visi & Misi - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->

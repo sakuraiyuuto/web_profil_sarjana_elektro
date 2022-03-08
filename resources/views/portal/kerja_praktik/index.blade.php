@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'Kerja Praktik - Teknik Elektro UNTAN')
+@section('title', 'Kerja Praktik - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->

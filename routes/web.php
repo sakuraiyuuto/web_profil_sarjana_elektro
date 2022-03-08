@@ -8,7 +8,6 @@ use App\Http\Controllers\AplikasiIntegrasiController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DokumenProdiController;
 use App\Http\Controllers\DosenController;
@@ -112,9 +111,6 @@ Route::middleware(['auth', 'prevent-back-history'])->group(function () {
     Route::post('/admin/berita/{berita}/restore', [BeritaController::class, 'restore']);
     Route::post('/admin/berita/{berita}/delete', [BeritaController::class, 'delete']);
 
-    Route::post('/admin/blog/{blog}/restore', [BlogController::class, 'restore']);
-    Route::post('/admin/blog/{blog}/delete', [BlogController::class, 'delete']);
-
     Route::post('/admin/dokumen_prodi/{dokumen_prodi}/restore', [DokumenProdiController::class, 'restore']);
     Route::post('/admin/dokumen_prodi/{dokumen_prodi}/delete', [DokumenProdiController::class, 'delete']);
 
@@ -123,10 +119,10 @@ Route::middleware(['auth', 'prevent-back-history'])->group(function () {
 
     Route::post('/admin/jurnal/{jurnal}/restore', [JurnalController::class, 'restore']);
     Route::post('/admin/jurnal/{jurnal}/delete', [JurnalController::class, 'delete']);
-    
+
     Route::post('/admin/buku/{buku}/restore', [BukuController::class, 'restore']);
     Route::post('/admin/buku/{buku}/delete', [BukuController::class, 'delete']);
-    
+
     Route::post('/admin/prosiding/{prosiding}/restore', [ProsidingController::class, 'restore']);
     Route::post('/admin/prosiding/{prosiding}/delete', [ProsidingController::class, 'delete']);
 
@@ -192,7 +188,6 @@ Route::middleware(['auth', 'prevent-back-history'])->group(function () {
     Route::resource('/admin/banner', BannerController::class);
     Route::get('/admin/berita/{berita}/edit', [BeritaController::class, 'edit']);
     Route::resource('/admin/berita', BeritaController::class);
-    Route::resource('/admin/blog', BlogController::class);
     Route::resource('/admin/dashboard', DashboardController::class);
     Route::resource('/admin/dokumen_prodi', DokumenProdiController::class);
     Route::resource('/admin/dosen', DosenController::class);
@@ -238,7 +233,6 @@ Route::middleware(['auth', 'prevent-back-history'])->group(function () {
     Route::resource('/admin/himpunan_mahasiswa', HimpunanMahasiswaController::class);
 
     Route::post('/admin/ckeditor/upload', 'App\Http\Controllers\CKEditorController@store')->name('ckeditor.upload');
-    
 });
 
 //Portal
@@ -284,7 +278,6 @@ Route::get('perpustakaan', [PerpustakaanController::class, 'menuPerpustakaan']);
 Route::get('penelitian', [PenelitianController::class, 'menuPenelitian']);
 Route::get('pengabdian_kepada_masyarakat', [PengabdianKeMasyarakatController::class, 'menuPengabdianKeMasyarakat']);
 Route::get('berita', [BeritaController::class, 'menuBerita']);
-Route::get('blog', [BlogController::class, 'menuBlog']);
 Route::get('kontak', [KontakController::class, 'menuKontak']);
 Route::get('aplikasi_integrasi', [AplikasiIntegrasiController::class, 'menuAplikasiIntegrasi']);
 Route::get('jurnal', [JurnalController::class, 'menuJurnal']);

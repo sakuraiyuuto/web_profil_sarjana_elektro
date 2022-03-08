@@ -39,20 +39,20 @@
                                             <div class="form-group">
                                                 <label for="judul">Judul</label>
                                                 <input type="text" class="form-control" id="judul" name="judul"
-                                                    placeholder="Masukkan Judul"
+                                                    placeholder="Masukkan Judul" maxlength="255"
                                                     value="{{ $pengabdianKeMasyarakat->judul }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="author">Pelaku PKM</label>
                                                 <input type="text" class="form-control" id="author" name="author"
-                                                    placeholder="Masukkan Pelaku PKM" value="{{ $pengabdianKeMasyarakat->author }}"
-                                                    required>
+                                                    placeholder="Masukkan Pelaku PKM"
+                                                    value="{{ $pengabdianKeMasyarakat->author }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="tahun">Tahun</label>
-                                                <input type="text" class="form-control" id="tahun" name="tahun"
-                                                    placeholder="Masukkan Tahun Penelitian" value="{{ $pengabdianKeMasyarakat->tahun }}"
-                                                    required>
+                                                <input type="number" class="form-control" id="tahun" name="tahun"
+                                                    placeholder="Masukkan Tahun Penelitian"
+                                                    value="{{ $pengabdianKeMasyarakat->tahun }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="thumbnail">Thumbnail (Maksimal 2MB)</label>

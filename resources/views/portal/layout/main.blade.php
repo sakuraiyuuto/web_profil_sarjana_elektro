@@ -269,15 +269,15 @@
                                     <li
                                         class="{{ request()->is('dokumen_prodi', 'dokumen_prodi/*') ? 'active' : '' }}">
                                         <a class="beranda" href="{{ url('dokumen_prodi') }}">Dokumen
-                                            Prodi</a></li>
+                                            Prodi</a>
+                                    </li>
                                     <li
-                                        class="{{ request()->is('berita', 'blog', 'berita/*', 'blog/*', 'informasi_terbaru') ? 'active' : '' }}">
-                                        <span class="submenu">Blog & Berita <i
+                                        class="{{ request()->is('berita', 'berita/*', 'informasi_terbaru') ? 'active' : '' }}">
+                                        <span class="submenu">Berita & Informasi <i
                                                 class="fa fa-angle-down"></i></span>
                                         <ul class="submenu">
                                             <li><a class="{{ request()->is('berita/*') ? 'is-active' : '' }}"
                                                     href="{{ url('berita') }}">Berita</a></li>
-                                            <li><a href="{{ url('blog') }}">Blog</a></li>
                                             <li><a href="{{ url('informasi_terbaru') }}">Informasi Terbaru</a></li>
                                         </ul>
                                     </li>
@@ -354,7 +354,7 @@
                     <!--EDU2 FOOTER CONTANT DES START-->
                     <div class="col-md-4">
                         <div class="widget widget-links">
-                            <h5>Tentang Teknik Elektro UNTAN</h5>
+                            <h5>Tentang Sarjana Teknik Elektro UNTAN</h5>
                             <p style="color :white">{{ $profilSingkat->teks }}
 
                             </p>
@@ -377,8 +377,8 @@
                                 <li><a class="facebook" href="{{ $kontak->url_facebook }}" target="_BLANK"><i
                                             class="fa fa-facebook-square"></i></a>
                                 </li>
-                                <li><a class="instagram" href="{{ $kontak->url_instagram }}" target="_BLANK"><i
-                                            class="fa fa-instagram"></i></a>
+                                <li><a class="instagram" href="{{ $kontak->url_instagram }}"
+                                        target="_BLANK"><i class="fa fa-instagram"></i></a>
                                 </li>
                                 <li><a class="youtube" href="{{ $kontak->url_youtube }}" target="_BLANK"><i
                                             class="fa fa-youtube-square"></i></a>

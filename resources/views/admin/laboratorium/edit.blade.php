@@ -50,9 +50,9 @@
                                         <div class="card-body">
                                             <input type="hidden" value="{{ $laboratorium->id }}" name="id">
                                             <div class="form-group">
-                                                <label for="nama">Nama Himpunan</label>
+                                                <label for="nama">Nama Laboratorium</label>
                                                 <input type="text" class="form-control" id="nama" name="nama"
-                                                    placeholder="Masukkan Nama Himpunan" maxlength="255"
+                                                    placeholder="Masukkan Nama Laboratorium" maxlength="255"
                                                     value="{{ $laboratorium->nama }}">
                                             </div>
                                             <div class="form-group">

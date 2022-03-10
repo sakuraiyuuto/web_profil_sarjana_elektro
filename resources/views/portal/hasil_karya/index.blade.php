@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'Hasil Karya - Teknik Elektro UNTAN')
+@section('title', 'Hasil Karya - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->
@@ -52,18 +52,20 @@
                                             <h4>{{ substr(date('F', strtotime($hasilKarya->release_date)), 0, 3) }}
                                             </h4>
                                             <ul>
-                                                <li><i class="fa fa-calendar"></i>  {{ date(' Y', strtotime($hasilKarya->release_date)) }}</li>
+                                                <li><i class="fa fa-calendar"></i>
+                                                    {{ date(' Y', strtotime($hasilKarya->release_date)) }}</li>
                                             </ul>
                                             <p>
                                                 {{ $hasilKarya->judul }}
                                             </p>
-                                            
+
                                             <a href="{{ url($hasilKarya->slug) }}" class="readmore">Selengkapnya<i
                                                     class="fa fa-long-arrow-right"></i></a>
                                             <span> {{ date('d', strtotime($hasilKarya->release_date)) }}</span>
                                         </div>
 
-                                        <figure><img  style="height : 20rem; object-fit :cover"  src="{{ url($hasilKarya->thumbnail) }}" alt="" />
+                                        <figure><img style="height : 20rem; object-fit :cover"
+                                                src="{{ url($hasilKarya->thumbnail) }}" alt="" />
                                             <figcaption><a href="{{ url($hasilKarya->slug) }}"><i
                                                         class="fa fa-plus"></i></a></figcaption>
                                         </figure>
@@ -78,18 +80,20 @@
                                             <h4>{{ substr(date('F', strtotime($hasilKarya->release_date)), 0, 3) }}
                                             </h4>
                                             <ul>
-                                                <li>{{ date(' Y', strtotime($hasilKarya->release_date)) }} <i class="fa fa-calendar"></i> </li>
+                                                <li>{{ date(' Y', strtotime($hasilKarya->release_date)) }} <i
+                                                        class="fa fa-calendar"></i> </li>
                                             </ul>
                                             <p>
                                                 {{ $hasilKarya->judul }}
                                             </p>
-                                           
+
                                             <a href="{{ url($hasilKarya->slug) }}" class="readmore">Selengkapnya<i
                                                     class="fa fa-long-arrow-right"></i></a>
                                             <span> {{ date('d', strtotime($hasilKarya->release_date)) }}</span>
                                         </div>
 
-                                        <figure><img  style="height : 20rem; object-fit :cover" src="{{ url($hasilKarya->thumbnail) }}" alt="" />
+                                        <figure><img style="height : 20rem; object-fit :cover"
+                                                src="{{ url($hasilKarya->thumbnail) }}" alt="" />
                                             <figcaption><a href="{{ url($hasilKarya->slug) }}"><i
                                                         class="fa fa-plus"></i></a></figcaption>
                                         </figure>

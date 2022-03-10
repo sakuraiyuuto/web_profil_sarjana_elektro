@@ -46,7 +46,7 @@ class CreateMataKuliahsTable extends Migration
                     'nama'  => 'Mata Kuliah 3',
                     'sks'  => '5',
                     'semester'  => '6',
-                    'kelompok'  => 'Paket',
+                    'kelompok'  => 'Pilihan',
                 ]
             )
         );

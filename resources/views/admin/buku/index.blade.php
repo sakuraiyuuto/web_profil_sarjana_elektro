@@ -71,8 +71,15 @@
                                                     <td>{{ $buku->tahun }}</td>
                                                     <td>{{ $buku->nomor_volume }}</td>
                                                     <td><a href="{{ $buku->url }}">{{ $buku->url }}</a></td>
-                                                    <td><a href="{{ url($buku->nama_file) }}" download
-                                                            target="_blank">{{ $buku->nama_file }}</a></td>
+                                                    <td>
+                                                        @if ($buku->nama_file != '')
+                                                            <a href="{{ url($buku->nama_file) }}" download
+                                                                target="_blank">{{ $buku->nama_file }}
+                                                            </a>
+                                                        @else
+                                                            -
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $buku->release_date }}</td>
                                                     @if ($buku->deleted_at == '')
                                                         @if ($buku->release_date <= date('Y-m-d'))
@@ -80,7 +87,7 @@
                                                         @else
                                                             <td>Belum Rilis</td>
                                                         @endif
-                                                    @else ($buku->deleted_at != "")
+                                                    @else
                                                         <td>Terhapus</td>
                                                     @endif
                                                     @if ($buku->deleted_at == '')
@@ -96,8 +103,7 @@
                                                                 data-release_date="{{ $buku->release_date }}"
                                                                 class="btn btn-warning open-formModalEdit"><i
                                                                     class="fa fa-edit"></i> Edit</button>
-                                                            <form
-                                                                action="{{ route('buku.destroy', $buku) }}"
+                                                            <form action="{{ route('buku.destroy', $buku) }}"
                                                                 method="post">
                                                                 @method('delete')
                                                                 @csrf
@@ -150,39 +156,35 @@
                     <h5 class="modal-title" id="formModalLabel">Tambah Data Buku</h5>
                     <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">X</button>
                 </div>
-                <form id="formAdd" action="{{ url('/admin/buku') }}" method="post"
-                    enctype="multipart/form-data">
+                <form id="formAdd" action="{{ url('/admin/buku') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group mt-2">
-                                <label for="judul">Judul</label>
-                                <input type="text" class="form-control mt-0" name="judul" required
-                                     placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="author">Author</label>
-                                <input type="text" class="form-control mt-0" name="author" required 
-                                    placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="tahun">Tahun</label>
-                                <input type="number" class="form-control mt-0" name="tahun" required maxlength="4"
-                                    placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="nomor_volume">Nomor/Volume</label>
-                                <input type="text" class="form-control mt-0" name="nomor_volume" required 
-                                    placeholder=". . .">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="url">Link File Buku</label>
-                                <input type="text" class="form-control mt-0" name="url" required 
-                                    placeholder=". . .">
-                            </div>
+                            <label for="judul">Judul</label>
+                            <input type="text" class="form-control mt-0" name="judul" maxlength="255" required
+                                placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="author">Author</label>
+                            <input type="text" class="form-control mt-0" name="author" required placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="tahun">Tahun</label>
+                            <input type="number" class="form-control mt-0" name="tahun" required maxlength="4"
+                                placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="nomor_volume">Nomor/Volume</label>
+                            <input type="text" class="form-control mt-0" name="nomor_volume" required placeholder=". . .">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="url">Link File Buku</label>
+                            <input type="text" class="form-control mt-0" name="url" required placeholder=". . .">
+                        </div>
                         <div class="form-group">
                             <label for="nama_file">File Buku</label>
-                            <input type="file" class="form-control mt-0" name="nama_file"
-                                onchange="Filevalidation()">
+                            <input type="file" class="form-control mt-0" id="add_input_file" name="nama_file"
+                                accept="application/pdf">
                         </div>
                         <div class="form-group mt-2">
                             <label for="release_date">Jadwal Rilis</label>
@@ -217,33 +219,33 @@
                             <input type="hidden" name="id" id="id">
                             <div class="form-group mt-2">
                                 <label for="judul">Judul</label>
-                                <input type="text" class="form-control mt-0" name="judul" id="judul" required
-                                     placeholder=". . .">
+                                <input type="text" class="form-control mt-0" name="judul" id="judul" maxlength="255"
+                                    required placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="author">Author</label>
-                                <input type="text" class="form-control mt-0" name="author" id="author" required 
+                                <input type="text" class="form-control mt-0" name="author" id="author" required
                                     placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="tahun">Tahun</label>
-                                <input type="number" class="form-control mt-0" name="tahun" id="tahun" required maxlength="4"
-                                    placeholder=". . .">
+                                <input type="number" class="form-control mt-0" name="tahun" id="tahun" required
+                                    maxlength="4" placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="nomor_volume">Nomor/Volume</label>
-                                <input type="text" class="form-control mt-0" name="nomor_volume" id="nomor_volume" required 
+                                <input type="text" class="form-control mt-0" name="nomor_volume" id="nomor_volume" required
                                     placeholder=". . .">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="url">Link File Buku</label>
-                                <input type="text" class="form-control mt-0" name="url" id="url" required 
+                                <input type="text" class="form-control mt-0" name="url" id="url" required
                                     placeholder=". . .">
                             </div>
                             <div class="form-group">
                                 <label for="nama_file">File Buku</label>
-                                <input type="file" class="form-control mt-0" name="nama_file" id="nama_file"
-                                    onchange="Filevalidation()">
+                                <input type="file" class="form-control mt-0" name="nama_file" id="edit_input_file"
+                                    accept="application/pdf">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="release_date">Jadwal Rilis</label>
@@ -286,7 +288,6 @@
             var tahun = $(this).data('tahun');
             var nomor_volume = $(this).data('nomor_volume');
             var url = $(this).data('url');
-            var nama_file = $(this).data('nama_file');
             var release_date = $(this).data('release_date');
 
             $(".modal-body #id").val(id);
@@ -296,7 +297,6 @@
             $(".modal-body #nomor_volume").val(nomor_volume);
             $(".modal-body #url").val(url);
             $(".modal-body #release_date").val(release_date);
-            $(".modal-body #nama_file").val(nama_file);
         });
     </script>
 
@@ -321,5 +321,24 @@
                 $('.from-prevent-multiple-submits').attr('disabled', 'true');
             })
         })();
+
+        //Form add image validation
+        var uploadField = document.getElementById("add_input_file");
+        uploadField.onchange = function() {
+            if (this.files[0].size > 2000000) {
+                alert("Batas maksimum 2MB!");
+                this.value = "";
+            }
+        };
+
+        //Form edit image validation
+        var uploadField = document.getElementById("edit_input_file");
+        uploadField.onchange = function() {
+            if (this.files[0].size > 2000000) {
+                alert("Batas maksimum 2MB!");
+                this.value = "";
+            }
+        };
     </script>
+
 @endsection

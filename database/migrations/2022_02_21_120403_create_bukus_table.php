@@ -20,7 +20,7 @@ class CreateBukusTable extends Migration
             $table->string('tahun')->nullable(false);
             $table->text('nomor_volume')->nullable(false);
             $table->text('url')->nullable(false);
-            $table->string('nama_file', 255)->nullable(true);
+            $table->text('nama_file')->nullable(true);
             $table->date('release_date', 255)->nullable(false);
             $table->softDeletes();
             $table->timestamps();
@@ -29,7 +29,7 @@ class CreateBukusTable extends Migration
         DB::table('bukus')->insert(
             array(
                 [
-                    'judul' => "Buku 1", 
+                    'judul' => "Buku 1",
                     'author' => "DR. Prof. Dosen Satu",
                     'tahun' => "2018",
                     'nomor_volume' => "Vol.2 No. 4, 4 Desember 2019",

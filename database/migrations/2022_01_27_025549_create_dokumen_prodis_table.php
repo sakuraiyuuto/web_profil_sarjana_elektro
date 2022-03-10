@@ -17,7 +17,7 @@ class CreateDokumenProdisTable extends Migration
         Schema::create('dokumen_prodis', function (Blueprint $table) {
             $table->id();
             $table->string('judul', 255)->nullable(false);
-            $table->string('nama_file', 255)->nullable(false);
+            $table->text('nama_file')->nullable(false);
             $table->text('slug')->nullable(false);
             $table->date('release_date', 255)->nullable(false);
             $table->softDeletes();

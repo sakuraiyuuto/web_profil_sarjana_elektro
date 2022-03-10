@@ -1,6 +1,6 @@
 @extends('portal/layout/main')
 
-@section('title', 'Dosen - Teknik Elektro UNTAN')
+@section('title', 'Dosen - Sarjana Teknik Elektro UNTAN')
 
 @section('container')
     <!--Banner Wrap Start-->
@@ -44,17 +44,27 @@
                                         <th>Nama</th>
                                         <th>NIP</th>
                                         <th>Pangkat</th>
-                                        <th>Link Web Dosen</th>
+                                        <th>Web Dosen</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($dosens as $dosen)
                                         <tr>
-                                            <th>{{ $loop->iteration }}</th>
-                                            <th>{{ $dosen->nama }}</th>
-                                            <th>{{ $dosen->nip }}</th>
-                                            <th>{{ $dosen->pangkat_golongan }}</th>
-                                            <th><a href="{{ $dosen->url }}">{{ $dosen->url }}</a></th>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $dosen->nama }}</td>
+                                            <td>{{ $dosen->nip }}</td>
+                                            <td>{{ $dosen->pangkat_golongan }}</td>
+                                            <td>
+                                                @if ($dosen->url != '')
+                                                    <a href="{{ $dosen->url }}">
+                                                        <div class="btn btn-primary">
+                                                            Link
+                                                        </div>
+                                                    </a>
+                                                @else
+                                                    -
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -64,7 +74,7 @@
                     </div>
 
                     <!--KF_EDU_SIDEBAR_WRAP START-->
-                           <div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="kf-sidebar">
 
                             <!--KF_SIDEBAR_SEARCH_WRAP START-->
@@ -99,8 +109,9 @@
                                                         href="{{ url($informasiTerbaru->slug) }}">{{ $informasiTerbaru->judul }}</a>
                                                 </h6>
                                                 <span>
-                                             <i class="fa fa-clock-o"></i>{{ date('d M, Y', strtotime($informasiTerbaru->release_date)) }}
-                                   
+                                                    <i
+                                                        class="fa fa-clock-o"></i>{{ date('d M, Y', strtotime($informasiTerbaru->release_date)) }}
+
                                                 </span>
                                             </div>
                                         </li>
@@ -132,8 +143,8 @@
                                                         <h6><a
                                                                 href="{{ $aplikasiIntegrasi->url }}">{{ $aplikasiIntegrasi->nama }}</a>
                                                         </h6>
-                                                        <span>   <i class="fa fa-clock-o"></i>
-                                                        {{ date('d M, Y', strtotime($aplikasiIntegrasi->release_date)) }}</span>
+                                                        <span> <i class="fa fa-clock-o"></i>
+                                                            {{ date('d M, Y', strtotime($aplikasiIntegrasi->release_date)) }}</span>
                                                     </div>
                                                 </li>
                                                 <!--LIST ITEM START-->

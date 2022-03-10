@@ -20,7 +20,7 @@ class CreateAplikasiIntegrasisTable extends Migration
             $table->string('nama', 255)->nullable(false);
             $table->text('thumbnail')->nullable(false);
             $table->string('teks', 255)->nullable(false);
-            $table->string('url', 255)->nullable(false);
+            $table->text('url')->nullable(false);
             $table->date('release_date', 255)->nullable(false);
             $table->softDeletes();
             $table->timestamps();

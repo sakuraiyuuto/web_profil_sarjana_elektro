@@ -314,9 +314,9 @@
                         </li>
 
                         <li
-                            class="nav-item {{ set_open(['kurikulum.index','hasil_karya.index','hasil_karya.edit','hasil_karya.create','kalender_akademik.index','penelitian.index','penelitian.edit','penelitian.create','pengabdian_kepada_masyarakat.index','pengabdian_kepada_masyarakat.edit','pengabdian_kepada_masyarakat.create']) }}">
+                            class="nav-item {{ set_open(['sidang_akhir.index','seminar_proposal.index','kerja_praktik.index','dokumen_prodi.index','kurikulum.index','hasil_karya.index','hasil_karya.edit','hasil_karya.create','kalender_akademik.index','penelitian.index','penelitian.edit','penelitian.create','pengabdian_kepada_masyarakat.index','pengabdian_kepada_masyarakat.edit','pengabdian_kepada_masyarakat.create']) }}">
                             <a href="#"
-                                class="nav-link {{ set_active(['kurikulum.index','hasil_karya.index','hasil_karya.edit','hasil_karya.create','kalender_akademik.index','penelitian.index','penelitian.edit','penelitian.create','pengabdian_kepada_masyarakat.index','pengabdian_kepada_masyarakat.edit','pengabdian_kepada_masyarakat.create']) }}">
+                                class="nav-link {{ set_active(['dokumen_prodi.index','kurikulum.index','hasil_karya.index','hasil_karya.edit','hasil_karya.create','kalender_akademik.index','penelitian.index','penelitian.edit','penelitian.create','pengabdian_kepada_masyarakat.index','pengabdian_kepada_masyarakat.edit','pengabdian_kepada_masyarakat.create']) }}">
 
                                 <i class="nav-icon fas fa-school"></i>
                                 <p>
@@ -366,6 +366,39 @@
                                         <i
                                             class="far fa{{ set_dot(['pengabdian_kepada_masyarakat.index','pengabdian_kepada_masyarakat.edit','pengabdian_kepada_masyarakat.create']) }}-circle nav-icon"></i>
                                         <p>Pengabdian Kepada Masyarakat</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/dokumen_prodi') }}"
+                                      class="nav-link {{ set_active(['dokumen_prodi.index']) }}">
+                                      <i
+                                            class="far fa{{ set_dot(['dokumen_prodi.index','dokumen_prodi.edit','dokumen_prodi.create']) }}-circle nav-icon"></i>
+                                        <p>Dokumen Prodi</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/kerja_praktik') }}"
+                                        class="nav-link {{ set_active(['kerja_praktik.index']) }}">
+                                        <i
+                                            class="far fa{{ set_dot(['kerja_praktik.index']) }}-circle nav-icon"></i>
+                                        <p>Kerja Praktik</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/seminar_proposal') }}"
+                                        class="nav-link {{ set_active(['seminar_proposal.index']) }}">
+                                        <i
+                                            class="far fa{{ set_dot(['seminar_proposal.index']) }}-circle nav-icon"></i>
+                                        <p>Seminar Proposal</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/sidang_akhir') }}"
+                                        class="nav-link {{ set_active(['sidang_akhir.index']) }}">
+                                        <i class="far fa{{ set_dot(['sidang_akhir.index']) }}-circle nav-icon"></i>
+                                        <p>Sidang Akhir</p>
                                     </a>
                                 </li>
 
@@ -422,45 +455,7 @@
                             </ul>
                         </li>
 
-                        <li
-                            class="nav-item {{ set_open(['seminar_proposal.index', 'sidang_akhir.index', 'kerja_praktik.index']) }}">
-                            <a href="#"
-                                class="nav-link {{ set_active(['seminar_proposal.index', 'sidang_akhir.index', 'kerja_praktik.index']) }}">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>
-                                    SOP
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview  space-maju">
-
-                                <li class="nav-item">
-                                    <a href="{{ url('admin/kerja_praktik') }}"
-                                        class="nav-link {{ set_active(['kerja_praktik.index']) }}">
-                                        <i
-                                            class="far fa{{ set_dot(['kerja_praktik.index']) }}-circle nav-icon"></i>
-                                        <p>Kerja Praktik</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('admin/seminar_proposal') }}"
-                                        class="nav-link {{ set_active(['seminar_proposal.index']) }}">
-                                        <i
-                                            class="far fa{{ set_dot(['seminar_proposal.index']) }}-circle nav-icon"></i>
-                                        <p>Seminar Proposal</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{ url('admin/sidang_akhir') }}"
-                                        class="nav-link {{ set_active(['sidang_akhir.index']) }}">
-                                        <i class="far fa{{ set_dot(['sidang_akhir.index']) }}-circle nav-icon"></i>
-                                        <p>Sidang Akhir</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
+                      
 
                         <li
                             class="nav-item {{ set_open(['jadwal_kuliah.index','jadwal_ujian.index','jadwal_kegiatan.index','jadwal_kegiatan.create','jadwal_kegiatan.edit']) }}">
@@ -611,15 +606,7 @@
 
                             </ul>
                         </li>
-                        <li
-                            class="nav-item {{ set_open(['peraturan_perundang_undangan.index', 'dokumen_prodi.index']) }}">
-
-                            <a href="{{ url('admin/dokumen_prodi') }}"
-                                class="nav-link {{ set_active(['dokumen_prodi.index']) }}">
-                                <i class="nav-icon fas fa-download"></i>
-                                <p>Dokumen Prodi</p>
-                            </a>
-                        </li>
+                   
                         <li class="nav-item {{ set_open(['berita.index', 'berita.create', 'berita.edit']) }}">
 
                             <a href="{{ url('admin/berita') }}"
@@ -728,7 +715,7 @@
         <footer class="main-footer">
 
             <div class="float-right d-none d-sm-inline-block">
-                2022 © Jurusan Informatika, Universitas Tanjungpura.
+                2022 © Tim IT Fakultas Teknik, Universitas Tanjungpura.
             </div>
         </footer>
 

@@ -257,11 +257,12 @@ max-height : 0;
         padding-left : 40px !important;
         background: #2b2f31 !important;
     }
+   
     .hidden-menu2 span:hover, .hidden-menu2 span:hover,.hidden-menu2 span:hover{
         background :#0082BD !important;
     }
     .hidden-menu2 .is-active{  background :#011429 !important;}
-
+    .hidden-menu2 .active{  background :#011429 !important;}
     .hidden-menu2 ul.submenu a{
         padding-left: 50px !important;
     }
@@ -277,12 +278,16 @@ max-height : 0;
 
 }
 
-
+@media (min-width : 992px) AND (max-width : 1162px){
+ #nav{
+     width : 65vw !important;
+ }
+}
 
 @media (min-width: 62em) { /* Large devices (desktops, 992px and up) */
     #menutoggle { display: none; }
     #nav  .active span.submenu{
-        background: #0082BD;
+        background: #1093B1;
         color : white;
         border-radius: 10px;
         font-weight: bold;
@@ -290,14 +295,14 @@ max-height : 0;
       
       }
  #nav .active .beranda{
-    background: #0082BD;
+    background: #1093B1;
     color : white;
     border-radius: 10px;
     font-weight: bold;
  }
 
     #nav {
-        width : 58vw;
+        width : 55vw;
 	top : 5rem !important;
 
         height: 45px;
@@ -363,7 +368,7 @@ max-height : 0;
         display: none;
     }
     #nav a:hover, #nav a.is-active, #nav li:hover span.submenu, #nav ul.submenu a:hover, #nav span.submenu.is-active {
-        background: #fbff00;
+        background: #FFC700;
     }
     #nav li:hover a.submenu, #nav li:hover span.submenu, #nav span.submenu.is-active.hover {
         border-radius: 3px 3px 0 0;

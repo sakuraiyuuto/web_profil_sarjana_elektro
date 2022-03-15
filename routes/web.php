@@ -58,7 +58,7 @@ use App\Http\Controllers\InformasiTerbaruController;
 use App\Http\Controllers\UnduhanTerbaruController;
 use App\Http\Controllers\PencarianController;
 use App\Http\Controllers\LaboratoriumSingkatController;
-
+use App\Http\Controllers\TracerStudyController;
 
 //Admin
 Route::get('/admin', [LoginController::class, 'index']);
@@ -298,3 +298,4 @@ Route::get('sidang_akhir', [SidangAkhirController::class, 'menuSidangAkhir']);
 Route::get('kerja_praktik', [KerjaPraktikController::class, 'menuKerjaPraktik']);
 Route::get('laboratorium', [LaboratoriumController::class, 'menuLaboratorium']);
 Route::get('laboratorium/{slug}', [LaboratoriumController::class, 'menuDetailLaboratorium']);
+Route::get('tracer_study', [TracerStudyController::class, 'menuTracerStudy']);

@@ -17,15 +17,18 @@
 .widget-categories ul li a:hover,  
 .widget-courses-list figure a, .widget-tag-cloud ul li a:hover, #mobile-header, .sidr ul li:hover>a, .sidr ul li:hover>span, .sidr ul li.active>a, .sidr ul li.active>span, .sidr ul li.sidr-class-active>a, .sidr ul li.sidr-class-active>span, 
 .btn-style, .cont_socil_meta li a:hover, .edu_masonery_thumb .caption,.abt_univ_des .btn-3:hover{
-	background-color:  #0082BD;
+	background-color:  #013880;
 }
 .nav_2 ul li a:hover{
 	background-color : #FFF000;
 }
 .edu2_ft_topbar_wrap{
-	background-color : #F2AE00;
+	background-color : #073C64;
 }
 
+.none-border {
+	border : none !important;
+}
 /*
 	  ============================================================
 		   Border Color
@@ -144,7 +147,7 @@
 	  ============================================================
 */
 ::selection {
-	background: #e37d39;
+	background: #FFBD07;
 	color: #ffffff;
 }
 ::-webkit-selection {

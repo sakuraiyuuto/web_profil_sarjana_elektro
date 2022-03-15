@@ -75,9 +75,7 @@
             </div>
         </section>
         <div class="kf_location_wrap">
-            <div id="map-canvas" class="map-canvas"><iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8163927975597!2d109.34549091475328!3d-0.05632009995890483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d59969f6be863%3A0x15552924b4812685!2sFaculty%20of%20Engineering%20(FT)!5e0!3m2!1sen!2sid!4v1643630226462!5m2!1sen!2sid"
-                    width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+            <div id="map-canvas" class="map-canvas"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.816307272437!2d109.34416031475337!3d-0.05755599995800314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x56c399d185e1f67a!2zMMKwMDMnMjcuMiJTIDEwOcKwMjAnNDYuOSJF!5e0!3m2!1sen!2sid!4v1647320936109!5m2!1sen!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
         </div>
     </div>
     <!--Content Wrap End-->

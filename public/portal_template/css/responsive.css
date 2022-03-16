@@ -24,6 +24,10 @@
 =================================================
 */ 
 @media (min-width: 991px) {
+	.ck-style-image .ck-content  .image-style-side.image_resized{
+		left : 0%;
+		float : right !important;
+	}
 	.kf_cur_catg_des {
 height :  25rem;
 	}

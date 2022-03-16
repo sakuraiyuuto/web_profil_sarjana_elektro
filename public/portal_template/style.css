@@ -85,8 +85,13 @@
 }
 
 .ck-style-image .ck-content .image  img{
-	
+	min-width : 0;
 	max-width: 65%;
+
+}
+.ck-style-image .ck-content .image_resized  img{
+	min-width : 100% !important;
+
 
 }
 .ck-style-image .ck-content .image.image_resized{
@@ -141,10 +146,7 @@
 	width: 65%;
 	left : 100%:
 }
-.ck-style-image .ck-content  .image-style-side.image_resized{
-	left : 0%;
-	float : right !important;
-}
+
 .ck-style-image .ck-content .image-style-side.image_resized img{
 	float : right !important;
 

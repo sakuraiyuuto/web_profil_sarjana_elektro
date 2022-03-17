@@ -260,7 +260,7 @@
                                                 </ul>
                                             </li>
 
-                                            <li class="hidden-menu2"><span class="submenu level"> Laboratorium <i
+                                            <li class="hidden-menu2"><span class="submenu level {{ request()->is('laboratorium', 'laboratorium/*') ? 'active' : '' }}"> Laboratorium <i
                                                         class="fa fa-angle-down"></i></span>
                                                 <ul class="submenu">
                                                     <li><a class=" {{ request()->is('laboratorium', 'laboratorium/*') ? 'sub-active' : '' }}"
